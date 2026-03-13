@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pet photos!</title>
+<script>
+	// First, create an array of images to rotate
+	var famPhotos = new Array();
+	famPhotos[0] = new Image();
+	famPhotos[0].src = "pet1.jpg";
+	famPhotos[1] = new Image();
+	famPhotos[1].src = "pet2.jpg";
+	famPhotos[2] = new Image();
+	famPhotos[2].src = "pet3.jpg";
+	famPhotos[3] = new Image();
+	famPhotos[3].src = "pet4.webp";
+
+	var i = 0;
+	function rotator() {
+		document.getElementById("image1").src = famPhotos[i].src;
+		i++;
+		if (i == famPhotos.length) {
+			i = 0;
+		}
+		setTimeout(rotator, 2000);
+	}
+</script>
+</head>
+<body onload="rotator()">
+
+<h1>PET PHOTOS TIME</h1>
+Our family has some amazing pets! Here're some photos of them...
+<div id="img">
+	<img id="image1" width="600px" height="400px" border="15" style="border-color: black;">
+</div>
+
+</body>
+</html>

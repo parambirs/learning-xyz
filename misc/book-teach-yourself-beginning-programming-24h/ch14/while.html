@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Grading Papers</title>
+</head>
+<body>
+
+<script>
+	// program loops until the teacher does
+	// not have any additional students
+
+	var names = [];
+	var grades = new Array();
+	var ans = 'Y';
+	i = 0;
+	total = 0;
+	
+	while (ans == 'Y') {
+		names[i] = prompt("Enter student name:");
+		grades[i] = prompt("What was their test grade?");
+		total += parseFloat(grades[i]);
+		ans = prompt("Do you have another grade? (Y/N)");
+		i++;
+	}
+
+	for (j = 0; j < i; j++) {
+		document.write(names[j] + " scored " + grades[j] + "!<br>");
+	}
+	average = total / j;
+	document.write("<p>The class average was " + average);
+</script>
+
+</body>
+</html>
